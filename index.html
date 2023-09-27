@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/script/script.js" defer></script>
-    <title>Document</title>
+    <title>Calculator</title>
   </head>
 
   <body>
@@ -19,7 +19,43 @@
     <div class="main" id="main">
       <div class="calculator" id="calculator">
         <div class="screen" id="screen"></div>
-        <div class="button" id="buttons"></div>
+        <div class="button" id="buttons">
+          <div class="key-row" id="row">
+            <button id="operator">AC</button>
+            <button id="operator">Del</button>
+            <button id="operator">&times;</button>
+            <button id="operator">&divide;</button>
+          </div>
+
+          <div class="key-row" id="row">
+            <button id="digit">7</button>
+            <button id="digit">8</button>
+            <button id="digit">9</button>
+            <button id="operator">+</button>
+          </div>
+
+          <div class="key-row" id="row">
+            <button id="digit">4</button>
+            <button id="digit">5</button>
+            <button id="digit">6</button>
+            <button id="operator">-</button>
+          </div>
+
+          <div class="key-row" id="row">
+            <button id="digit">1</button>
+            <button id="digit">2</button>
+            <button id="digit">3</button>
+            <button id="operator">&pm;</button>
+          </div>
+
+          <div class="key-row" id="row">
+            <div>
+              <button id="digit">0</button>
+              <button id="digit dot">.</button>
+            </div>
+            <button id="operator">=</button>
+          </div>
+        </div>
       </div>
     </div>
 
