@@ -18,9 +18,38 @@ header {
   background-color: #212121;
   width: 100vw;
   text-align: center;
-  height: 9vh;
-  margin: 0;
-  padding: 0;
+  height: 50px;
+}
+
+.calculator {
+  border: 10px solid #212121;
+  background-color: #212121;
+  padding: 6px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 250px;
+}
+
+.display {
+  display: flex;
+  background-color: #313131;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* margin: 10px 0px; */
+  flex-grow: 2;
 }
 
 footer {
@@ -32,9 +61,8 @@ footer {
   color: white;
   background-color: #212121;
   width: 100vw;
-  height: 5vh;
+  height: 40px;
   text-align: center;
-  margin: 0;
 }
 
 .fa-github {
