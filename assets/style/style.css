@@ -1,23 +1,50 @@
-body {
+* {
+  color: white;
+}
+
+body,
+.header,
+.calculator,
+.keyboard,
+.key-row,
+.footer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+body {
+  justify-content: space-between;
   background-color: #fcb31b;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
 
-header {
+.zero-dot-row,
+.display {
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+body,
+.display,
+.keyboard,
+.calculator {
+  flex-direction: column;
+}
+
+.key-row,
+.zero-dot-row,
+.equal-row .equal,
+.key-row button {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
   font-weight: bold;
-  color: white;
   background-color: #212121;
   width: 100vw;
-  text-align: center;
   height: 50px;
 }
 
@@ -26,45 +53,42 @@ header {
   background-color: #212121;
   padding: 6px;
   border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 450px;
   width: 250px;
 }
 
 .display {
-  display: flex;
   background-color: #313131;
-  flex-direction: column;
   flex-grow: 1;
   width: 100%;
 }
 
 .keyboard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  /* margin: 10px 0px; */
+  margin: 10px 0px;
+  margin-bottom: 0px;
   flex-grow: 2;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.key-row {
+  justify-content: space-between;
+}
+
+.key-row button {
+  background-color: #393939;
+  font-weight: bold;
+  border-radius: 100%;
+}
+
+.equal-row .equal {
+  border-radius: 20px;
+}
+
+.footer {
   font-size: large;
   font-weight: bold;
-  color: white;
   background-color: #212121;
   width: 100vw;
   height: 40px;
   text-align: center;
-}
-
-.fa-github {
-  color: white;
 }
