@@ -17,42 +17,45 @@
     </header>
 
     <div class="calculator" id="calculator">
-      <div class="display" id="display"></div>
+      <div class="display" id="display">
+        <p id="display-upper"></p>
+        <p id="display-lower"></p>
+      </div>
       <div class="keyboard" id="keyboard">
-        <div class="key-row" id="row">
-          <button id="operator">AC</button>
-          <button id="operator">Del</button>
-          <button id="operator">&times;</button>
-          <button id="operator">&divide;</button>
+        <div class="key-row">
+          <button class="operator">AC</button>
+          <button class="operator">Del</button>
+          <button class="operator">&times;</button>
+          <button class="operator">&divide;</button>
         </div>
 
-        <div class="key-row" id="row">
-          <button id="digit">7</button>
-          <button id="digit">8</button>
-          <button id="digit">9</button>
-          <button id="operator">+</button>
+        <div class="key-row">
+          <button class="digit">7</button>
+          <button class="digit">8</button>
+          <button class="digit">9</button>
+          <button class="operator">+</button>
         </div>
 
-        <div class="key-row" id="row">
-          <button id="digit">4</button>
-          <button id="digit">5</button>
-          <button id="digit">6</button>
-          <button id="operator">-</button>
+        <div class="key-row">
+          <button class="digit">4</button>
+          <button class="digit">5</button>
+          <button class="digit">6</button>
+          <button class="operator">-</button>
         </div>
 
-        <div class="key-row" id="row">
-          <button id="digit">1</button>
-          <button id="digit">2</button>
-          <button id="digit">3</button>
-          <button id="operator">&pm;</button>
+        <div class="key-row">
+          <button class="digit">1</button>
+          <button class="digit">2</button>
+          <button class="digit">3</button>
+          <button class="operator">&pm;</button>
         </div>
 
-        <div class="key-row equal-row" id="row">
+        <div class="key-row equal-row">
           <span class="zero-dot-row">
-            <button id="digit">0</button>
-            <button id="digit dot">.</button>
+            <button class="digit">0</button>
+            <button class="digit dot">.</button>
           </span>
-          <button class="equal" id="operator">=</button>
+          <button class="equal operator">=</button>
         </div>
       </div>
     </div>
