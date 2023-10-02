@@ -1,19 +1,3 @@
-function add(num1, num2) {
-  return num1 + num2;
-}
-
-function subtract(num1, num2) {
-  return num1 - num2;
-}
-
-function multiply(num1, num2) {
-  return num1 * num2;
-}
-
-function divide(num1, num2) {
-  return num1 / num2;
-}
-
 const buttons = document.querySelectorAll(".key-row button");
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => handleButtonClick(btn));
@@ -34,15 +18,53 @@ let operator = "";
 let num1Assign = true;
 let num2Assign = false;
 
+function reset() {
+  num1 = "";
+  num2 = "";
+  operator = "";
+  num1Assign = true;
+  num2Assign = false;
+}
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function divide(num1, num2) {
+  return num1 / num2;
+}
+
 function writeToScreen() {
   return lowerDisplay.textContent.length < MAX_LENGTH;
 }
 
-function assignNum() {
-  if (num1Assign) {
-    num1 = Number(lowerDisplay.textContent);
-  } else {
-    num2 = Number(lowerDisplay.textContent);
+function handleButtonClick(btn) {
+  let btnClass = btn.className;
+  let btnId = btn.id;
+  if (btnClass === "digit") {
+    // btnClass is used for multiple buttons with the same class
+    handleDigits(btn);
+  } else if (btnId === "dot") {
+    // btnId is used for one button with that unique id
+    handleDot();
+  } else if (btnClass === "operator") {
+    handleOperators(btn);
+  } else if (btnId === "equal") {
+    handleEqual();
+  } else if (btnId === "ac") {
+    handleAc();
+  } else if (btnId === "delete") {
+    handleDel();
+  } else if (btnId === "pm") {
+    handlePlusMinus();
   }
 }
 
@@ -58,6 +80,14 @@ function handleDigits(btn) {
 
     lowerDisplay.textContent += btn.value;
     assignNum();
+  }
+}
+
+function assignNum() {
+  if (num1Assign) {
+    num1 = Number(lowerDisplay.textContent);
+  } else {
+    num2 = Number(lowerDisplay.textContent);
   }
 }
 
@@ -85,14 +115,6 @@ function handleOperators(btn) {
     num1Assign = false;
     num2Assign = true;
   }
-}
-
-function reset() {
-  num1 = "";
-  num2 = "";
-  operator = "";
-  num1Assign = true;
-  num2Assign = false;
 }
 
 function handleEqual() {
@@ -136,28 +158,6 @@ function handlePlusMinus() {
     lowerDisplay.textContent = "-" + lowerDisplay.textContent;
   }
   assignNum();
-}
-
-function handleButtonClick(btn) {
-  let btnClass = btn.className;
-  let btnId = btn.id;
-  if (btnClass === "digit") {
-    // btnClass is used for multiple buttons with the same class
-    handleDigits(btn);
-  } else if (btnId === "dot") {
-    // btnId is used for one button with that unique id
-    handleDot();
-  } else if (btnClass === "operator") {
-    handleOperators(btn);
-  } else if (btnId === "equal") {
-    handleEqual();
-  } else if (btnId === "ac") {
-    handleAc();
-  } else if (btnId === "delete") {
-    handleDel();
-  } else if (btnId === "pm") {
-    handlePlusMinus();
-  }
 }
 
 function operate(num1, num2, operator) {
