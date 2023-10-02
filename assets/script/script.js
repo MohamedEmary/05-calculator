@@ -55,10 +55,10 @@ function handleDigits(btn) {
   }
 }
 
-function handleDot(btn) {
+function handleDot() {
   // !lowerDisplay.textContent.includes(".") to prevent multiple dots
   if (!lowerDisplay.textContent.includes(".") && writeToScreen()) {
-    lowerDisplay.textContent += btn.value;
+    lowerDisplay.textContent += ".";
   }
   // no need to reassign num1 or num2 here as dot is useless unless there is a number after it
   // and when there is a number after it, it will be reassigned in handleDigits() function using
@@ -96,7 +96,40 @@ function handleEqual() {
   }
   lowerDisplay.textContent = "";
   upperDisplay.textContent = result;
+  // add bette result handling especially for those which
+  // contain a lot of decimal places so they don't overflow display
   reset();
+}
+
+function handleAc() {
+  upperDisplay.textContent = "0";
+  lowerDisplay.textContent = "";
+  reset();
+}
+
+function handleDel() {
+  if (lowerDisplay.textContent === "") {
+    assignNum();
+    return;
+  } else {
+    lowerDisplay.textContent = lowerDisplay.textContent.slice(
+      0,
+      lowerDisplay.textContent.length - 1
+    );
+    assignNum();
+  }
+}
+
+function handlePlusMinus() {
+  if (lowerDisplay.textContent.startsWith("-")) {
+    lowerDisplay.textContent = lowerDisplay.textContent.slice(
+      1,
+      lowerDisplay.textContent.length + 1
+    );
+  } else {
+    lowerDisplay.textContent = "-" + lowerDisplay.textContent;
+  }
+  assignNum();
 }
 
 function handleButtonClick(btn) {
@@ -107,11 +140,17 @@ function handleButtonClick(btn) {
     handleDigits(btn);
   } else if (btnId === "dot") {
     // btnId is used for one button with that unique id
-    handleDot(btn);
+    handleDot();
   } else if (btnClass === "operator") {
     handleOperators(btn);
   } else if (btnId === "equal") {
     handleEqual();
+  } else if (btnId === "ac") {
+    handleAc();
+  } else if (btnId === "delete") {
+    handleDel();
+  } else if (btnId === "pm") {
+    handlePlusMinus();
   }
 }
 
