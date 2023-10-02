@@ -96,15 +96,15 @@ function reset() {
 }
 
 function handleEqual() {
-  let result = 0;
   if (num1 !== "" && num2 !== "") {
+    let result = 0;
     result = Number(operate(num1, num2, operator).toFixed(2));
+    lowerDisplay.textContent = "";
+    upperDisplay.textContent = result;
+    // add bette result handling especially for those which
+    // contain a lot of decimal places so they don't overflow display
+    reset();
   }
-  lowerDisplay.textContent = "";
-  upperDisplay.textContent = result;
-  // add bette result handling especially for those which
-  // contain a lot of decimal places so they don't overflow display
-  reset();
 }
 
 function handleAc() {
