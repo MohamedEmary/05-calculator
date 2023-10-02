@@ -182,3 +182,11 @@ function operate(num1, num2, operator) {
   }
   return result;
 }
+
+const githubIcon = document.querySelector(".fa-github");
+githubIcon.addEventListener("mouseenter", () => {
+  githubIcon.classList.add("fa-spin");
+});
+githubIcon.addEventListener("mouseleave", () => {
+  githubIcon.classList.remove("fa-spin");
+});
