@@ -40,7 +40,6 @@ function assignNum() {
   }
 }
 
-
 function handleDigits(btn) {
   if (
     !(btn.value === "0" && lowerDisplay.textContent === "") && // to prevent writing 0 as the first digit
@@ -83,12 +82,13 @@ function handleOperators(btn) {
 }
 
 function reset() {
-  let num1 = "";
-  let num2 = "";
-  let operator = "";
-  let num1Assign = true;
-  let num2Assign = false;
+  num1 = "";
+  num2 = "";
+  operator = "";
+  num1Assign = true;
+  num2Assign = false;
 }
+
 function handleEqual() {
   let result = 0;
   if (num1 !== "" && num2 !== "") {
