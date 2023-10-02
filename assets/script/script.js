@@ -5,7 +5,7 @@ buttons.forEach((btn) => {
     btn.style.backgroundColor = "#515151";
   });
   btn.addEventListener("mouseleave", () => {
-    btn.style.backgroundColor = "#313131";
+    btn.style.backgroundColor = "#393939";
   });
 });
 
