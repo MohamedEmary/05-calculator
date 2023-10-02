@@ -92,7 +92,7 @@ function reset() {
 function handleEqual() {
   let result = 0;
   if (num1 !== "" && num2 !== "") {
-    result = operate(num1, num2, operator);
+    result = Number(operate(num1, num2, operator).toFixed(2));
   }
   lowerDisplay.textContent = "";
   upperDisplay.textContent = result;
