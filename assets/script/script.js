@@ -15,9 +15,15 @@ function divide(num1, num2) {
 }
 
 const buttons = document.querySelectorAll(".key-row button");
-buttons.forEach((btn) =>
-  btn.addEventListener("click", () => handleButtonClick(btn))
-);
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => handleButtonClick(btn));
+  btn.addEventListener("mouseenter", () => {
+    btn.style.backgroundColor = "#515151";
+  });
+  btn.addEventListener("mouseleave", () => {
+    btn.style.backgroundColor = "#313131";
+  });
+});
 
 const upperDisplay = document.querySelector("#upper-display");
 const lowerDisplay = document.querySelector("#lower-display");
